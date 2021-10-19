@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Question2316402
+
+namespace Test
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -14,21 +17,27 @@ namespace Question2316402
             Console.WriteLine(args[0]);
             Console.WriteLine(args[1]);
             Console.ReadKey();
-            var pattern = @"[^а-я|a-z]+";
-            var regex = new Regex(pattern, RegexOptions.IgnoreCase);
 
-            var arr = regex.Split(str.ToLower()).Where(e => e.Length >= 1);
-            var query = arr.GroupBy(e => e).Select(e => new { Word = e.Key, Count = e.Count() }).OrderByDescending(e => e.Count);
+            Assembly asm = Assembly.LoadFrom("ClassLibraryTest.dll");
 
+            Type magicType = asm.GetType("ClassLibraryTest.ClassCounter");
+            ConstructorInfo magicConstructor = magicType.GetConstructor(Type.EmptyTypes);
+            object magicClassObject = magicConstructor.Invoke(new object[] { });
 
+            MethodInfo magicMethod = magicType.GetMethod("Counter", BindingFlags.Instance | BindingFlags.NonPublic);
+
+            object magicValue = magicMethod.Invoke(magicClassObject, new object[] { str });
+
+            
+            var ordered = (Dictionary<string, int>)magicValue;
 
             var sout = new StringBuilder();
-            foreach (var item in query)
+            foreach (KeyValuePair<string, int> kvp in ordered)
             {
-                sout.Append($"{item.Word} {item.Count}").AppendLine();
+
+                sout.Append($"{kvp.Key} {kvp.Value}").AppendLine();
 
             }
-
 
             File.WriteAllText(args[1], sout.ToString(), Encoding.UTF8);
 

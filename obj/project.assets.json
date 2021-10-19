@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "ClassLibraryTest/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/ClassLibraryTest.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClassLibraryTest.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ClassLibraryTest/1.0.0": {
+      "type": "project",
+      "path": "../ClassLibraryTest/ClassLibraryTest.csproj",
+      "msbuildProject": "../ClassLibraryTest/ClassLibraryTest.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "ClassLibraryTest >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Дмитрий\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Дмитрий\\source\\repos\\Test\\ClassLibraryTest\\ClassLibraryTest.csproj": {
+              "projectPath": "C:\\Users\\Дмитрий\\source\\repos\\Test\\ClassLibraryTest\\ClassLibraryTest.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

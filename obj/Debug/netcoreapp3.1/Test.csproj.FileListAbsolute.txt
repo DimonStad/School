@@ -11,3 +11,7 @@ C:\Users\Дмитрий\source\repos\Test\Test\bin\Debug\netcoreapp3.1\Test.runt
 C:\Users\Дмитрий\source\repos\Test\Test\bin\Debug\netcoreapp3.1\Test.runtimeconfig.dev.json
 C:\Users\Дмитрий\source\repos\Test\Test\bin\Debug\netcoreapp3.1\Test.pdb
 C:\Users\Дмитрий\source\repos\Test\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
+C:\Users\Дмитрий\source\repos\Test\Test\obj\Debug\netcoreapp3.1\Test.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\source\repos\Test\Test\obj\Debug\netcoreapp3.1\Test.csproj.CopyComplete
+C:\Users\Дмитрий\source\repos\Test\Test\bin\Debug\netcoreapp3.1\ClassLibraryTest.dll
+C:\Users\Дмитрий\source\repos\Test\Test\bin\Debug\netcoreapp3.1\ClassLibraryTest.pdb
